@@ -17,3 +17,9 @@ I uploaded multiple free project templates like awesome landing pages that you c
 **Attribution Requirement:**
 When used in a public or commercial project, you must include a visible credit, such as:  
 `"Design/Template based on work by [DynamoCodes] (https://www.youtube.com/@DynamoCodes)."`
+
+# More Info
+In order to get license, contact us through our official channels:
+https://www.instagram.com/devgateway.official/
+https://www.linkedin.com/company/devgateway/
+https://www.instagram.com/zainab.devgateway/

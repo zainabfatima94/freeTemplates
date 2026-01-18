@@ -20,6 +20,9 @@ When used in a public or commercial project, you must include a visible credit, 
 
 # More Info
 In order to get license, contact us through our official channels:
-https://www.instagram.com/devgateway.official/
-https://www.linkedin.com/company/devgateway/
-https://www.instagram.com/zainab.devgateway/
+https://www.instagram.com/devgateway.official/ 
+https://www.linkedin.com/company/devgateway/ 
+https://www.instagram.com/zainab.devgateway/ 
+
+**Subscribe to my Channel for complete tutorials**
+https://www.youtube.com/@DynamoCodes

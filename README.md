@@ -3,7 +3,7 @@ I uploaded multiple free project templates like awesome landing pages that you c
 
 ### **License and Terms of Use**
 
-- All templates, including code, design, and documents, are owned by **[Your Name/Company]**. Copyright © [Year] [Your Name/Company].
+- All templates, including code, design, and documents, are owned by **[DynamoCodes]**. Copyright © [2025-26] [DevGateway].
 - You receive a limited, non-exclusive license to use the template only under these terms.
 - Reselling or redistributing the template (in original or modified form) to single or multiple clients without the owner's written permission is prohibited.
 - Without explicit permission, you may not represent these templates, or any significant derivative work, as your own original creation.

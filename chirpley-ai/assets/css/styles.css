@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: rgb(255, 220, 165);
+    --text-color: rgb(242, 65, 57);
+    --secondary-bg-color: rgb(255, 235, 204);
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-y: hidden;
+}
+
+/* section { width: 100vw; } */
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--text-color);
+    /* Color of the thumb */
+    border-radius: 5px;
+    /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+    /* Color of the track */
+}
+
+/* Header Section */
+header {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    padding: 45px 70px;
+    box-sizing: border-box;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    height: 45px;
+}
+
+header .links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+header .links div {
+    background: white;
+    height: max-content;
+    padding: 12px 20px;
+    border-radius: 40px;
+}
+
+header .links .bar-1 {
+    background: rgb(255, 235, 204);
+    display: flex;
+    gap: 25px;
+}
+
+header .links div a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header .links div a:hover {
+    color: black;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    z-index: -1;
+}
+
+.hero-overlay video {
+    width: 100%;
+}
+
+/* Content */
+.hero-content {
+    transform-origin: bottom;
+    transform: scale(0);
+    width: 100%;
+    text-align: center;
+}
+
+.hero-content h1 {
+    letter-spacing: -15px;
+    font-size: 15rem;
+    transform: scaleY(2);
+}
+
+.hero-content h1 span {
+    display: inline-block;
+    transform: scaleY(0.7);
+}
+
+.hero-content p {
+    margin-top: 70px;
+    font-weight: 600;
+    font-size: 1.7rem;
+    transform: scaleY(1.3);
+}
+
+/* Target Audience */
+.target-audience .target-flexbox {
+    display: flex;
+    gap: 25px;
+    padding: 50px;
+}
+
+.target-audience .target-flexbox .chirpley-images {
+    margin-top: 20px;
+    width: 50%;
+    display: flex;
+}
+
+.target-audience .target-flexbox .chirpley-images .image {
+    width: 350px;
+    height: 350px;
+    padding: 9px;
+    background: white;
+    border-radius: 5px;
+    flex-shrink: 0;
+    /* Ensure smooth GSAP transforms */
+    will-change: transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.target-audience .target-flexbox .chirpley-images .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.target-audience .target-flexbox .target-content {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 60px;
+    letter-spacing: -5px;
+    font-size: 3.5rem;
+    font-weight: 300 !important;
+    text-align: center;
+}
+
+.target-audience .social-links {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.target-audience .social-links .links-column {
+    height: max-content;
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+.target-audience .social-links h3 {
+    font-size: 1.5rem;
+}
+
+.target-audience .social-links .links-column a {
+    padding: 25px;
+    margin-left: 25px;
+    padding-bottom: 15px;
+    border-radius: 15%;
+    background: #ffffffc7;
+}
+
+/* MarketPlace */
+.marketplace {
+    background: linear-gradient(to bottom, transparent, var(--secondary-bg-color), var(--secondary-bg-color));
+}
+
+.marketplace .circle {
+    width: 100vw;
+    height: 100vw;
+    position: absolute;
+    z-index: -1;
+    border-radius: 100%;
+    background: var(--secondary-bg-color);
+}
+
+.marketplace video {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: calc(50% - 200px);
+    position: relative;
+}
+
+.marketplace h1 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 200px;
+    font-size: 3rem;
+    text-align: center;
+    background: var(--secondary-bg-color);
+}
+
+.marketplace .benefits {
+    width: 100%;
+    justify-content: center;
+    display: grid;
+    box-sizing: border-box;
+    padding: 20px;
+    grid-template-columns: repeat(3, 300px);
+    text-align: center;
+    gap: 80px;
+    margin-top: 90px;
+    padding-bottom: 100px;
+    background: var(--secondary-bg-color);
+}
+
+/* AI-ML Container */
+.ai-ml {
+    background: var(--secondary-bg-color);
+    padding-bottom: 50px;
+}
+
+.ai-ml hr {
+    border-color: var(--text-color);
+    width: 80%;
+    margin-left: 10%;
+    background: var(--text-color);
+}
+
+/* TOP HEADER & CONTENT */
+.ai-ml h1 {
+    transform: scaleY(1.3);
+    font-size: 12rem;
+    text-align: center;
+    letter-spacing: -5px;
+}
+
+.ai-ml h1 .faded {
+    color: rgb(228, 142, 137);
+}
+
+.ai-ml .ai-content {
+    box-sizing: border-box;
+    padding: 10px;
+    padding-left: 100px;
+    gap: 20px;
+    align-items: center;
+    display: flex;
+}
+
+.ai-ml .ai-content h2 {
+    font-size: 2rem;
+}
+
+.ai-ml .ai-content img {
+    width: 650px;
+}
+
+/* Newsletter */
+.ai-ml .newsletter {
+    width: max-content;
+    margin: auto;
+}
+
+.ai-ml .newsletter .newsletter-content {
+    background: var(--text-color);
+    width: 480px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    height: max-content;
+}
+
+.ai-ml .newsletter .newsletter-content h2 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.ai-ml .newsletter .newsletter-content button {
+    background: white;
+    color: var(--text-color);
+    font-weight: 600;
+    letter-spacing: -1px;
+    padding: 10px 20px;
+    border-radius: 100px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.ai-ml .newsletter .anchor {
+    position: relative;
+    left: calc(50% - 90px);
+    top: -20px;
+}
+
+.ai-ml .newsletter .anchor img {
+    width: 200px;
+}
+
+.ai-ml .newsletter .egg {
+    width: 520px;
+}
+
+/* Links & Companies */
+.ai-ml .links{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.ai-ml .companies {
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    grid-template-columns: repeat(7, max-content);
+}
+
+.ai-ml .links h2 {
+    font-size: 1.9rem;
+}
+
+.ai-ml .links h2 a,
+.ai-ml .links h3 a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.ai-ml .newsletter .newsletter-content button:hover,
+.ai-ml .links h2:hover a,
+.ai-ml .links h3:hover a {
+    color: black;
+}
+
+
+.ai-ml .companies img {
+    width: 120px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-bg-color);
+    display: flex;
+    box-sizing: border-box;
+    padding: 50px;
+    justify-content: space-between;
+    padding-bottom: 100px;
+}
+
+footer a {
+    color: var(--text-color);
+    transition: color 0.4s ease;
+}
+
+footer a:hover {
+    color: black;
+}
+
+footer .links a,
+.social-links a {
+    margin-left: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1100px) {
+    .hero-content h1 { font-size: 12rem; }
+    
+    .target-audience .target-flexbox {
+        flex-direction: column;
+    }
+
+    .target-audience .target-flexbox .chirpley-images,
+    .target-audience .target-flexbox .target-content {
+        width: 100%;
+    }
+
+    .target-audience .target-flexbox .target-content {
+        font-size: 3rem;
+        text-align: right;
+    }
+
+    .target-audience .target-flexbox .target-content h2 {
+        width: 70%;
+        margin-left: 35%;
+    }
+
+    .marketplace h1 {
+        padding: 0 50px;
+        font-size: 2rem;
+    }
+
+    .marketplace .benefits {
+        gap: 30px;
+        grid-template-columns: repeat(2, 300px);
+    }
+
+    .ai-ml .ai-content {
+        padding-left: 30px;
+    }
+
+    .ai-ml h1 { font-size: 10rem; margin-bottom: 50px; }
+
+    .ai-ml .ai-content img {
+        width: 420px;
+    }
+
+    .ai-ml .companies {
+        grid-template-columns: repeat(4, max-content);
+    }
+
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    header {
+        padding: 30px 20px;
+    }
+
+    header .links,
+    header .links .bar-1 {
+        gap: 5px;
+    }
+
+    .hero-overlay {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+
+    .hero-overlay video {
+        height: 100vh;
+        width: auto;
+        min-width: 100vw;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-content h1 {
+        font-size: 10rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .target-audience .target-flexbox .target-content {
+        margin-top: 150px;
+    }
+
+    .target-audience .target-flexbox .target-content h2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .ai-ml h1 {
+        font-size: 7rem;
+    }
+
+    .ai-ml .ai-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .target-audience .social-links .links-column a {
+        padding: 12px;
+        margin-left: 12px;
+    }
+
+    .target-audience .social-links .links-column a img {
+        width: 0.85rem;
+    }
+}
+
+@media (max-width: 690px) {
+    .target-audience .target-flexbox .chirpley-images .image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 7rem;
+    }
+
+    .target-audience .target-flexbox .target-content h2 { font-size: 2.5rem; letter-spacing: 0; }
+
+    .marketplace .circle {
+        height: 100vh;
+    }
+
+    .ai-ml .ai-content img {
+        width: 300px;
+    }
+
+    .ai-ml .links { gap: 10px; }
+
+    .marketplace h1 {
+        font-size: 1.2rem;
+    }
+
+    .marketplace .benefits {
+        grid-template-columns: repeat(1, 80vw);
+    }
+
+    .ai-ml .links h2 { font-size: 1.3rem; }
+
+    .ai-ml .circle {
+        padding-bottom: 100vh;
+    }
+}

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>DevGateway | Premium Template Vault</title>
+  <!-- Google Fonts + modern typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* premium gradient background */
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* navigation - minimal & premium */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 1.6rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #c084fc;
+    }
+
+    /* hero section */
+    .hero {
+      text-align: center;
+      margin: 3rem 0 5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139, 92, 246, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #c084fc;
+      margin-bottom: 1.8rem;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* stats row */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 2rem;
+      padding: 0.75rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* template grid - premium cards */
+    .secHdr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 3rem 0 1rem;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #ffffff, #d9d9ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .section-sub {
+      color: #71717a;
+      margin-bottom: 2rem;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 2rem;
+    }
+
+    .template-card {
+      background: rgba(18, 18, 24, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .template-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(236, 72, 153, 0.02) 100%);
+      pointer-events: none;
+    }
+
+    .template-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(139, 92, 246, 0.2);
+    }
+
+    .card-preview {
+      height: 180px;
+      background: linear-gradient(145deg, #1e1e2a, #12121a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .preview-icon {
+      font-size: 4rem;
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      background: linear-gradient(135deg, #ffffff, #e2e2ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tech-pill {
+      background: rgba(139, 92, 246, 0.15);
+      border-radius: 40px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #c084fc;
+      border: 0.5px solid rgba(139, 92, 246, 0.4);
+    }
+
+    .card-desc {
+      color: #a1a1aa;
+      font-size: 0.85rem;
+      margin: 0.8rem 0 1rem;
+      line-height: 1.5;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .tech-stack span {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #cbd5e1;
+      font-family: monospace;
+    }
+
+    .card-buttons {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-live {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      border: none;
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .btn-live:hover {
+      transform: scale(0.98);
+      box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-repo {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #cbd5e1;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .btn-repo:hover {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: #8b5cf6;
+      color: white;
+    }
+
+    /* code block premium */
+    .code-block {
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem 1.5rem;
+      margin: 3rem 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .code-text {
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.85rem;
+      color: #c084fc;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .code-text i {
+      color: #8b5cf6;
+    }
+
+    .copy-btn {
+      background: rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-family: inherit;
+      font-weight: 500;
+      color: #c084fc;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: #8b5cf6;
+      color: white;
+      border-color: #8b5cf6;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+
+    .social-links a i {
+      font-size: 1.1rem;
+    }
+
+    .social-links a:hover {
+      color: #c084fc;
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: #52525b;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.2rem;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-glow"></div>
+  <div class="container">
+    <!-- navbar premium -->
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-gem"></i>
+        <span>DevGateway</span>
+      </div>
+      <div class="nav-links">
+        <a href="#repoGrid">Templates</a>
+        <a href="https://devgateway.netlify.app">DevGateway</a>
+        <a href="license.html">License</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="hero">
+      <div class="hero-badge">
+        &#10024; Premium template vault
+      </div>
+      <h1>Crafted Templates <br>for Modern Creators</h1>
+      <div class="hero-desc">
+        Ready-to-use, beautifully designed HTML/CSS/JS templates. Zero frameworks, full customization, and dark mode
+        ready.
+      </div>
+      <div class="stats-row">
+        <div class="stat-item"><span class="stat-number">4+</span> <span>premium templates</span></div>
+        <div class="stat-item"><span class="stat-number">100%</span> <span>vanilla code</span></div>
+        <div class="stat-item"><span class="stat-number">✨ free</span> <span>with credit</span></div>
+      </div>
+    </div>
+
+    <!-- featured section title -->
+    <div class="secHdr">
+      <div class="section-title">✦ Featured Templates</div>
+      <div class="section-sub">Drag & Drop Ready · Fully Responsive · Dark Aesthetic</div>
+    </div>
+
+    <!-- dynamic repo grid -->
+    <div class="repo-grid" id="repoGrid"></div>
+
+    <!-- git command block -->
+    <div class="code-block">
+      <div class="code-text">
+        <i class="fas fa-terminal"></i>
+        <span>$ git clone https://github.com/devgateway/free-templates.git</span>
+      </div>
+      <button class="copy-btn" id="copyCloneBtn"><i class="far fa-copy"></i> copy command</button>
+    </div>
+
+    <!-- footer socials -->
+    <div class="footer">
+      <div class="social-links">
+        <a href="http://devgateway.netlify.app" target="_blank"><i class="fas fa-globe"></i> devgateway.netlify</a>
+        <a href="https://www.instagram.com/zainab.devgateway/" target="_blank"><i class="fab fa-instagram"></i>
+          zainab.devgateway</a>
+        <a href="https://www.linkedin.com/company/devgateway/" target="_blank"><i class="fab fa-linkedin"></i>
+          DevGateway</a>
+        <a href="https://youtube.com/@DynamoCodes" target="_blank"><i class="fab fa-youtube"></i> DynamoCodes</a>
+        <a href="https://www.instagram.com/dynamocodes.official" target="_blank"><i class="fab fa-instagram"></i>
+          dynamocodes</a>
+      </div>
+      <div class="copyright">
+        © 2025 DevGateway — crafted by Zainab. All templates under custom license. Attribution required for free use.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Repository data (dark theme, premium)
+    const templates = [
+      {
+        id: 1,
+        title: "⚡ Aurora Portfolio",
+        desc: "Classic Developer Portfolio with easy smooth design, pastel vibes & showcase for your projects",
+        tech: ["HTML", "CSS Grid", "Flexbox", "Google Fonts"],
+        icon: "fa-user-astronaut",
+        iconColor: "#818cf8",
+        liveUrl: "1_portfolio/index.html",
+        repoUrl: "https://github.com/zainabfatima94/freeTemplates/tree/main/1_portfolio",
+        pill: "portfolio"
+      },
+      {
+        id: 2,
+        title: "🌸 Cute Task Manager",
+        desc: "Aesthetic to-do app with localStorage, smooth filters, pastel vibes & dark mode support. Perfect for daily productivity.",
+        tech: ["HTML5", "CSS3", "JavaScript", "localStorage"],
+        icon: "fa-list-check",
+        iconColor: "#f472b6",
+        liveUrl: "2_cutetodolist/index.html",
+        repoUrl: "https://github.com/zainabfatima94/freeTemplates/tree/main/2_cutetodolist",
+        pill: "interactive"
+      },
+    ];
+
+    function renderCards() {
+      const grid = document.getElementById('repoGrid');
+      if (!grid) return;
+      let html = '';
+      for (let t of templates) {
+        html += `
+        <div class="template-card">
+          <div class="card-preview">
+            <i class="fas ${t.icon} preview-icon" style="color: ${t.iconColor}; text-shadow: 0 0 15px ${t.iconColor}40;"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-header-row">
+              <div class="card-title">${t.title}</div>
+              <div class="tech-pill">${t.pill}</div>
+            </div>
+            <div class="card-desc">${t.desc}</div>
+            <div class="tech-stack">
+              ${t.tech.map(tech => `<span>#${tech.toLowerCase().replace(/\s/g, '')}</span>`).join('')}
+            </div>
+            <div class="card-buttons">
+              <a href="${t.liveUrl}" target="_blank" class="btn-live"><i class="fas fa-external-link-alt"></i> live demo</a>
+              <a href="${t.repoUrl}" target="_blank" class="btn-repo"><i class="fab fa-github"></i> source</a>
+            </div>
+          </div>
+        </div>
+      `;
+      }
+      grid.innerHTML = html;
+    }
+
+    renderCards();
+
+    // copy command
+    const copyBtn = document.getElementById('copyCloneBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const cloneCmd = "git clone https://github.com/devgateway/free-templates.git";
+        navigator.clipboard.writeText(cloneCmd).then(() => {
+          const originalHtml = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<i class="fas fa-check"></i> copied!';
+          setTimeout(() => {
+            copyBtn.innerHTML = originalHtml;
+          }, 2000);
+        }).catch(() => {
+          alert("Copy manually: " + cloneCmd);
+        });
+      });
+    }
+
+    // optional: small console greet
+    console.log("✨ DevGateway premium vault — dark gradients ready, templates loaded.");
+  </script>
+</body>
+
+</html>

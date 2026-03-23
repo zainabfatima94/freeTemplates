@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>DevGateway | Contact Us</title>
+  <!-- Google Fonts + modern typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* premium gradient background */
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 1.6rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #c084fc;
+    }
+
+    /* back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 100px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #c084fc;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(139, 92, 246, 0.25);
+      transform: translateX(-4px);
+    }
+
+    /* contact header */
+    .contact-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139, 92, 246, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #c084fc;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      color: #71717a;
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* main contact grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    /* contact info cards */
+    .info-section {
+      background: rgba(18, 18, 24, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+    }
+
+    .info-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ffffff, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 1rem;
+      transition: 0.2s;
+    }
+
+    .contact-detail:hover {
+      background: rgba(139, 92, 246, 0.08);
+      transform: translateX(5px);
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(139, 92, 246, 0.15);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #c084fc;
+    }
+
+    .contact-text h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #ffffff;
+    }
+
+    .contact-text p,
+    .contact-text a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .contact-text a:hover {
+      color: #c084fc;
+    }
+
+    /* social links section */
+    .social-links-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-card {
+      flex: 1;
+      min-width: 120px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      transition: 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .social-card:hover {
+      background: rgba(139, 92, 246, 0.12);
+      border-color: rgba(139, 92, 246, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .social-card i {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .social-card span {
+      display: block;
+      font-size: 0.8rem;
+      color: #a1a1aa;
+    }
+
+    /* Google Form Section */
+    .form-section {
+      background: rgba(18, 18, 24, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .google-form-btn {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      border: none;
+      padding: 1.2rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      margin: 1rem 0;
+    }
+
+    .google-form-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.4);
+    }
+
+    .form-note {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: #71717a;
+      text-align: center;
+    }
+
+    .form-preview {
+      background: rgba(10, 10, 15, 0.6);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+      border: 1px dashed rgba(139, 92, 246, 0.3);
+    }
+
+    .form-preview i {
+      font-size: 2rem;
+      color: #c084fc;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+
+    .form-preview p {
+      color: #a1a1aa;
+      font-size: 0.85rem;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+
+    .footer-social a i {
+      font-size: 1.1rem;
+    }
+
+    .footer-social a:hover {
+      color: #c084fc;
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: #52525b;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .container {
+        padding: 1.2rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .info-section,
+      .form-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-glow"></div>
+  <div class="container">
+    <!-- navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <i class="fas fa-gem"></i>
+        <span>DevGateway</span>
+      </a>
+      <div class="nav-links">
+        <a href="#repoGrid">Templates</a>
+        <a href="https://devgateway.netlify.app">DevGateway</a>
+        <a href="license.html">License</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <!-- back to home -->
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> back to templates
+    </a>
+
+    <!-- contact header -->
+    <div class="contact-header">
+      <div class="contact-badge">
+        <i class="fas fa-comment-dots"></i> get in touch
+      </div>
+      <h1>Let's Connect</h1>
+      <div class="contact-sub">Have questions about licensing, custom work, or just want to say hi? We'd love to hear
+        from you.</div>
+    </div>
+
+    <!-- contact grid -->
+    <div class="contact-grid">
+      <!-- left side: contact info -->
+      <div class="info-section">
+        <div class="info-title">
+          <i class="fas fa-paper-plane"></i>
+          <span>Reach Out</span>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="contact-text">
+            <h3>Email Us</h3>
+            <p><a href="mailto:zainab.devgateway@gmail.com">zainab.devgateway@gmail.com</a></p>
+            <p style="font-size: 0.75rem; margin-top: 0.3rem;">Response within 24-48 hours</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="contact-text">
+            <h3>Instagram DM</h3>
+            <p><a href="https://www.instagram.com/zainab.devgateway/" target="_blank">@zainab.devgateway</a></p>
+            <p><a href="https://www.instagram.com/dynamocodes.official/" target="_blank">@dynamocodes.official</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="contact-text">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/company/devgateway/" target="_blank">DevGateway Company Page</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-icon">
+            <i class="fab fa-youtube"></i>
+          </div>
+          <div class="contact-text">
+            <h3>YouTube</h3>
+            <p><a href="https://youtube.com/@DynamoCodes" target="_blank">@DynamoCodes</a></p>
+          </div>
+        </div>
+
+        <!-- quick social links -->
+        <div class="social-links-section">
+          <div class="info-title" style="font-size: 1.1rem; margin-bottom: 1rem;">
+            <i class="fas fa-hashtag"></i>
+            <span>Follow Us</span>
+          </div>
+          <div class="social-grid">
+            <a href="https://www.instagram.com/zainab.devgateway/" target="_blank" class="social-card">
+              <i class="fab fa-instagram" style="color: #e4405f;"></i>
+              <span>zainab.devgateway</span>
+            </a>
+            <a href="https://www.linkedin.com/company/devgateway/" target="_blank" class="social-card">
+              <i class="fab fa-linkedin" style="color: #0a66c2;"></i>
+              <span>DevGateway</span>
+            </a>
+            <a href="https://youtube.com/@DynamoCodes" target="_blank" class="social-card">
+              <i class="fab fa-youtube" style="color: #ff0000;"></i>
+              <span>DynamoCodes</span>
+            </a>
+            <a href="https://www.instagram.com/dynamocodes.official/" target="_blank" class="social-card">
+              <i class="fab fa-instagram" style="color: #e4405f;"></i>
+              <span>dynamocodes</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- right side: Google Form Link -->
+      <div class="form-section">
+        <div class="info-title">
+          <i class="fab fa-google"></i>
+          <span>Google Form</span>
+        </div>
+
+        <a href="https://forms.gle/hUYi8EiLxi7PcTjt6"
+          target="_blank" class="google-form-btn">
+          <i class="fas fa-external-link-alt"></i> Open Google Form
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+        <div class="form-preview">
+          <i class="fab fa-google"></i>
+          <p><strong>Quick & Easy Contact Form</strong></p>
+          <p style="font-size: 0.8rem; margin-top: 0.5rem;">Click the button above to fill out our Google Form. We'll
+            get back to you within 24-48 hours.</p>
+        </div>
+
+        <div class="form-note">
+          <i class="fas fa-shield-alt"></i> Your information is secure. We respect your privacy and never share your
+          data.
+        </div>
+
+        <!-- alternative direct email -->
+        <div
+          style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+          <p style="font-size: 0.75rem; color: #71717a;">Prefer direct email?</p>
+          <p style="font-size: 0.85rem;"><a href="mailto:zainab.devgateway@gmail.com"
+              style="color: #c084fc;">zainab.devgateway@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ / quick info -->
+    <div
+      style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+      <div
+        style="background: rgba(18, 18, 24, 0.6); border-radius: 1rem; padding: 1.2rem; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <i class="fas fa-clock"
+          style="font-size: 1.5rem; color: #c084fc; margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin-bottom: 0.3rem;">Response Time</p>
+        <p style="font-size: 0.8rem; color: #a1a1aa;">24-48 hours on business days</p>
+      </div>
+      <div
+        style="background: rgba(18, 18, 24, 0.6); border-radius: 1rem; padding: 1.2rem; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <i class="fas fa-file-contract"
+          style="font-size: 1.5rem; color: #c084fc; margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin-bottom: 0.3rem;">License Questions</p>
+        <p style="font-size: 0.8rem; color: #a1a1aa;">Check <a href="license.html" style="color: #c084fc;">license
+            page</a> for details</p>
+      </div>
+      <div
+        style="background: rgba(18, 18, 24, 0.6); border-radius: 1rem; padding: 1.2rem; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <i class="fas fa-code"
+          style="font-size: 1.5rem; color: #c084fc; margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin-bottom: 0.3rem;">Custom Development</p>
+        <p style="font-size: 0.8rem; color: #a1a1aa;">Available for hire — email to discuss</p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="footer-social">
+        <a href="http://devgateway.netlify.app" target="_blank"><i class="fas fa-globe"></i> devgateway.netlify</a>
+        <a href="https://www.instagram.com/zainab.devgateway/" target="_blank"><i class="fab fa-instagram"></i>
+          zainab.devgateway</a>
+        <a href="https://www.linkedin.com/company/devgateway/" target="_blank"><i class="fab fa-linkedin"></i>
+          DevGateway</a>
+        <a href="https://youtube.com/@DynamoCodes" target="_blank"><i class="fab fa-youtube"></i> DynamoCodes</a>
+        <a href="https://www.instagram.com/dynamocodes.official/" target="_blank"><i class="fab fa-instagram"></i>
+          dynamocodes</a>
+      </div>
+      <div class="copyright">
+        © 2024-2026 DevGateway — crafted with <i class="fas fa-heart" style="color: #f472b6;"></i> by Zainab. All rights
+        reserved.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Optional: Track Google Form button click for analytics (optional)
+    const googleFormBtn = document.querySelector('.google-form-btn');
+    if (googleFormBtn) {
+      googleFormBtn.addEventListener('click', function () {
+        console.log('📝 Google Form opened - DevGateway Contact');
+        // You can add analytics tracking here if needed
+      });
+    }
+  </script>
+</body>
+
+</html>

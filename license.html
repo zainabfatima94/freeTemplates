@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>DevGateway | License Terms</title>
+  <!-- Google Fonts + modern typography -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0f;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #ffffff;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* premium gradient background */
+    .bg-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 50%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, rgba(0, 0, 0, 0) 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+
+    .logo i {
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 1.6rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: #c084fc;
+    }
+
+    /* back button */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 100px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #c084fc;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      background: rgba(139, 92, 246, 0.25);
+      transform: translateX(-4px);
+    }
+
+    /* license header */
+    .license-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .license-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139, 92, 246, 0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #c084fc;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .last-updated {
+      color: #71717a;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    /* license content grid */
+    .license-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .license-card {
+      background: rgba(18, 18, 24, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .license-card:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      padding: 1.5rem 1.5rem 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .card-header i {
+      font-size: 2rem;
+    }
+
+    .card-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-body p {
+      color: #a1a1aa;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .card-body ul,
+    .card-body ol {
+      color: #a1a1aa;
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .card-body li {
+      margin-bottom: 0.5rem;
+    }
+
+    .card-body strong {
+      color: #c084fc;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+      margin: 1rem 0;
+    }
+
+    /* full license text section */
+    .full-license {
+      background: rgba(10, 10, 15, 0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .full-license h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .full-license p {
+      color: #a1a1aa;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .full-license ul {
+      color: #a1a1aa;
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .full-license li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      background: rgba(139, 92, 246, 0.1);
+      border-left: 3px solid #8b5cf6;
+      padding: 1rem 1.2rem;
+      border-radius: 0.8rem;
+      margin: 1rem 0;
+    }
+
+    .contact-info {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.1));
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .contact-info a {
+      color: #c084fc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+
+    .social-links a i {
+      font-size: 1.1rem;
+    }
+
+    .social-links a:hover {
+      color: #c084fc;
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: #52525b;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 1.2rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .full-license {
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-glow"></div>
+  <div class="container">
+    <!-- navigation -->
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <i class="fas fa-gem"></i>
+        <span>DevGateway</span>
+      </a>
+      <div class="nav-links">
+        <a href="#repoGrid">Templates</a>
+        <a href="https://devgateway.netlify.app">DevGateway</a>
+        <a href="license.html">License</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <!-- back to home -->
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> back to templates
+    </a>
+
+    <!-- license header -->
+    <div class="license-header">
+      <div class="license-badge">
+        <i class="fas fa-scale-balanced"></i> legal terms & conditions
+      </div>
+      <h1>Custom License Agreement</h1>
+      <div class="last-updated">Last updated: March 23, 2026</div>
+    </div>
+
+    <!-- quick summary cards -->
+    <div class="license-grid">
+      <div class="license-card">
+        <div class="card-header">
+          <i class="fas fa-check-circle" style="color: #10b981;"></i>
+          <h2>✅ Permitted Uses</h2>
+        </div>
+        <div class="card-body">
+          <p><strong>You ARE allowed to:</strong></p>
+          <ul>
+            <li>Use templates for personal portfolio websites</li>
+            <li>Modify and customize the code for your own needs</li>
+            <li>Learn from the code structure and implementation</li>
+            <li>Share links to this repository with proper attribution</li>
+            <li>Use for non-commercial projects and practice</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="license-card">
+        <div class="card-header">
+          <i class="fas fa-ban" style="color: #ef4444;"></i>
+          <h2>❌ Prohibited Uses</h2>
+        </div>
+        <div class="card-body">
+          <p><strong>You are NOT allowed to:</strong></p>
+          <ul>
+            <li>Sell or resell any template (original or modified)</li>
+            <li>Redistribute templates on any platform without permission</li>
+            <li>Use for commercial purposes without a license</li>
+            <li>Create YouTube tutorials without crediting the author</li>
+            <li>Remove attribution without purchasing credit removal</li>
+            <li>Claim ownership of the templates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="license-card">
+        <div class="card-header">
+          <i class="fas fa-video" style="color: #f59e0b;"></i>
+          <h2>🎬 YouTube & Content Policy</h2>
+        </div>
+        <div class="card-body">
+          <p><strong>For content creators:</strong></p>
+          <ul>
+            <li>Must provide visible credit in description & video</li>
+            <li>Must link back to DevGateway or this repository</li>
+            <li>Monetized content requires prior permission</li>
+            <li>Contact for tutorial license pricing</li>
+          </ul>
+          <div class="divider"></div>
+          <p><strong>Unauthorized use may result in copyright claims.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- full license terms -->
+    <div class="full-license">
+      <h3><i class="fas fa-file-contract"></i> Full License Terms</h3>
+      <p><strong>Copyright © 2024-2026 Zainab | DevGateway</strong></p>
+      <p>This license applies to all templates and code files within the DevGateway Free Templates repository, including
+        but not limited to HTML, CSS, JavaScript, and associated assets.</p>
+
+      <h3 style="margin-top: 1.5rem;">1. Definitions</h3>
+      <ul>
+        <li><strong>"Templates"</strong> refers to any HTML, CSS, JavaScript, and associated assets contained in the
+          repository.</li>
+        <li><strong>"Author"</strong> refers to Zainab | DevGateway.</li>
+        <li><strong>"Personal Use"</strong> means using the templates for individual portfolio, learning, or
+          non-commercial projects.</li>
+        <li><strong>"Commercial Use"</strong> means using templates for business purposes, client work, or any
+          revenue-generating activity.</li>
+      </ul>
+
+      <h3>2. Grant of Rights</h3>
+      <p>The Author grants you a non-exclusive, non-transferable right to use, modify, and display the Templates for
+        Personal Use, provided that proper attribution is given to the Author in a visible location within your project
+        (footer, about section, or credits page).</p>
+
+      <h3>3. Attribution Requirement</h3>
+      <p>When using any Template, you must include a clear credit line such as: <strong>"Design by Zainab |
+          DevGateway"</strong> with a clickable link to <a href="http://devgateway.netlify.app"
+          style="color: #c084fc;">devgateway.netlify.app</a> or this repository. Failure to provide proper attribution
+        constitutes a violation of this license.</p>
+
+      <div class="highlight">
+        <i class="fas fa-envelope" style="color: #c084fc; margin-right: 8px;"></i>
+        <strong>Credit Removal:</strong> If you wish to remove the attribution, you must contact the Author to purchase
+        a credit removal license. Unauthorized removal is prohibited.
+      </div>
+
+      <h3>4. Commercial Licensing</h3>
+      <p>Any use of Templates for commercial purposes (including client projects, company websites, SaaS products, or
+        any revenue-generating activity) requires the purchase of a commercial license. Contact the Author for pricing
+        and terms.</p>
+
+      <h3>5. YouTube & Content Creation</h3>
+      <p>Creating tutorials, videos, or educational content featuring these Templates is permitted only with clear
+        credit and a link to the Author. For monetized content or commercial video courses, a separate content license
+        must be obtained.</p>
+
+      <h3>6. Redistribution & Reselling</h3>
+      <p>You may not redistribute, repackage, or resell any Template (in original or modified form) on any platform,
+        marketplace, or as part of a collection without explicit written permission from the Author.</p>
+
+      <h3>7. Disclaimer of Warranty</h3>
+      <p>THESE TEMPLATES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+        LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT
+        SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT,
+        OR OTHERWISE, ARISING FROM THE USE OF THESE TEMPLATES.</p>
+
+      <h3>8. Termination</h3>
+      <p>This license is effective until terminated. Your rights under this license will terminate automatically without
+        notice if you fail to comply with any term herein. Upon termination, you must cease all use of the Templates and
+        delete any copies.</p>
+    </div>
+
+    <!-- third-party credits -->
+    <div class="license-grid">
+      <div class="license-card">
+        <div class="card-header">
+          <i class="fas fa-icons" style="color: #f472b6;"></i>
+          <h2>Third-Party Credits</h2>
+        </div>
+        <div class="card-body">
+          <p>Some templates may include resources from:</p>
+          <ul>
+            <li><strong>Font Awesome</strong> — Icons (Free for personal use)</li>
+            <li><strong>Google Fonts</strong> — Typography (Open Source)</li>
+          </ul>
+          <p>These resources remain the property of their respective owners and are used in accordance with their own
+            licensing terms.</p>
+        </div>
+      </div>
+
+      <div class="license-card">
+        <div class="card-header">
+          <i class="fas fa-comments" style="color: #2dd4bf;"></i>
+          <h2>Questions & Permissions</h2>
+        </div>
+        <div class="card-body">
+          <p>For any inquiries, commercial licensing, credit removal, or special permissions, please contact:</p>
+          <p><strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:zainab.devgateway@gmail.com"
+              style="color: #c084fc;">zainab.devgateway@gmail.com</a></p>
+          <p><strong><i class="fab fa-instagram"></i> Instagram:</strong> <a
+              href="https://www.instagram.com/zainab.devgateway/" style="color: #c084fc;">@zainab.devgateway</a></p>
+          <div class="divider"></div>
+          <p><strong>Typical response time:</strong> 24-48 hours</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- contact section -->
+    <div class="contact-info">
+      <i class="fas fa-crown"
+        style="font-size: 2rem; color: #c084fc; margin-bottom: 0.5rem; display: inline-block;"></i>
+      <h3 style="margin-bottom: 0.5rem;">Need a Commercial License?</h3>
+      <p>Get unlimited commercial usage, credit removal rights, and priority support.</p>
+      <p><strong>Contact us at:</strong> <a href="mailto:zainab.devgateway@gmail.com">zainab.devgateway@gmail.com</a>
+      </p>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div class="social-links">
+        <a href="http://devgateway.netlify.app" target="_blank"><i class="fas fa-globe"></i> devgateway.netlify</a>
+        <a href="https://www.instagram.com/zainab.devgateway/" target="_blank"><i class="fab fa-instagram"></i>
+          zainab.devgateway</a>
+        <a href="https://www.linkedin.com/company/devgateway/" target="_blank"><i class="fab fa-linkedin"></i>
+          DevGateway</a>
+        <a href="https://youtube.com/@DynamoCodes" target="_blank"><i class="fab fa-youtube"></i> DynamoCodes</a>
+        <a href="https://www.instagram.com/dynamocodes.official" target="_blank"><i class="fab fa-instagram"></i>
+          dynamocodes</a>
+      </div>
+      <div class="copyright">
+        © 2024-2026 DevGateway — crafted with <i class="fas fa-heart" style="color: #f472b6;"></i> by Zainab. All rights
+        reserved.
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

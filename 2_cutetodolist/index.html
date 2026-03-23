@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>🌸 Cute Task Manager | To-Do List App</title>
+  <!-- 
+    ============================================================
+    STYLESHEETS (CSS)
+    ============================================================
+    This stylesheet defines all the visual styles for our cute app.
+    We use a soft pastel color palette, rounded corners, and 
+    playful shadows to make the interface friendly and adorable.
+    ============================================================
+  -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+</head>
+
+<body>
+
+  <div class="todo-app">
+    <!-- HEADER with cute title and emojis -->
+    <div class="app-header">
+      <h1>
+        <span>📋✨</span>
+        Cute Tasks
+        <span>🌸</span>
+      </h1>
+      <div class="sub">stay organized with a sprinkle of joy!</div>
+    </div>
+
+    <!-- ADD NEW TASK SECTION -->
+    <div class="task-input-section">
+      <div class="input-group">
+        <!-- text input where user types new task -->
+        <input type="text" id="taskInput" placeholder="e.g., buy strawberries 🍓, read a book..."
+          autocomplete="off">
+        <button class="add-btn" id="addTaskBtn">
+          <span>➕</span> <span>Add task</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FILTER BUTTONS (show all, active, completed) -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All ✨</button>
+      <button class="filter-btn" data-filter="active">Active 🧸</button>
+      <button class="filter-btn" data-filter="completed">Completed ✔️</button>
+    </div>
+
+    <!-- TASKS LIST will be dynamically rendered here -->
+    <div class="tasks-container" id="tasksList">
+      <!-- tasks injected via javascript -->
+      <div class="empty-message">✨ Your to-do list is empty! Add a cute task ✨</div>
+    </div>
+
+    <!-- FOOTER with counters and clear completed button -->
+    <div class="stats-footer">
+      <span id="taskCounter">0 tasks</span>
+      <button class="clear-completed" id="clearCompletedBtn">Clear completed 🧹</button>
+    </div>
+  </div>
+
+    <!-- Custom JavaScript to store, delete and manage tasks using LocalStorage -->
+  <script src="assets/script.js"></script>
+</body>
+
+</html>

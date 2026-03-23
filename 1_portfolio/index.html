@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- 
+  SIMPLE PORTFOLIO LANDING PAGE - BEGINNER FRIENDLY
+  This page uses only basic HTML and CSS (no complex properties, no JavaScript).
+  Navigation works using simple anchor links (#id) that jump to sections.
+  Every section has an id that matches the navigation href.
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Replace your Name Here -->
+  <title>[Name] | Portfolio</title>
+  
+  <!-- Google Fonts: simple, clean font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons (simple icons library) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ========== HEADER / NAVIGATION ========== -->
+<!-- The navigation uses simple # links that jump to sections with matching ids -->
+<header>
+  <div class="container nav-bar">
+
+    <!-- Replace your Name -->
+    <div class="logo">[Name]</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>      <!-- Links to id="home" -->
+      <li><a href="#about">About</a></li>    <!-- Links to id="about" -->
+      <li><a href="#skills">Skills</a></li>  <!-- Links to id="skills" -->
+      <li><a href="#projects">Projects</a></li> <!-- Links to id="projects" -->
+      <li><a href="#contact">Contact</a></li>    <!-- Links to id="contact" -->
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- ========== HERO SECTION ========== -->
+  <!-- id="home" matches the navigation href="#home" -->
+  <section id="home">
+    <div class="container hero">
+      <div class="hero-content">
+        <div class="hero-badge">✦ DIGITAL CRAFTSMAN ✦</div>
+        <h1>Creating digital <span class="hero-highlight">experiences</span> that matter</h1>
+
+        <!-- Replace with your Name -->
+        <p class="hero-description">I'm [Name] — designer & front-end architect focused on minimal, meaningful interfaces.</p>
+        <!-- Button also links to projects section -->
+        <a href="#projects" class="hero-btn">Explore work <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-circle">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ME SECTION ========== -->
+  <!-- id="about" matches the navigation href="#about" -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-text">
+
+        <!-- Replace your Name and About -->
+        <p>Hey! I'm [Name], a creative developer with 6+ years of experience crafting websites and interactive products. I blend aesthetics with performance, always aiming for a seamless user journey. Based in Austin, TX, I collaborate with brands and startups to bring fresh ideas to life.</p>
+        <p>When I'm not coding, you'll find me sketching UI concepts, exploring typography, or hiking with my dog. I believe the best designs come from curiosity and empathy — understanding people first, then building with care.</p>
+        <p>💡 <strong>Philosophy:</strong> "Design is not just how it looks, but how it works and feels."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MY SKILLS SECTION ========== -->
+  <!-- id="skills" matches the navigation href="#skills" -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-react"></i> React.js</div>
+        <div class="skill-card"><i class="fab fa-js"></i> JavaScript (ES6+)</div>
+        <div class="skill-card"><i class="fab fa-figma"></i> Figma</div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i> Tailwind / CSS</div>
+        <div class="skill-card"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="skill-card"><i class="fas fa-database"></i> Firebase</div>
+        <div class="skill-card"><i class="fas fa-palette"></i> UI/UX Design</div>
+        <div class="skill-card"><i class="fab fa-git-alt"></i> Git & Github</div>
+        <div class="skill-card"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <!-- id="projects" matches the navigation href="#projects" -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-cloud-moon"></i></div>
+          <h3>Nebula Dashboard</h3>
+          <p>Analytics dashboard for SaaS metrics — realtime data visualization with dark mode.</p>
+          <a href="#" class="btn-more">Case study →</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-leaf"></i></div>
+          <h3>EcoCart</h3>
+          <p>Sustainable e‑commerce concept with carbon offset tracker and minimal checkout.</p>
+          <a href="#" class="btn-more">Live demo →</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-brain"></i></div>
+          <h3>Mindful Journal</h3>
+          <p>Privacy-first journaling PWA with daily prompts and mood insights.</p>
+          <a href="#" class="btn-more">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ME SECTION ========== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Connect with me</h2>
+      <p style="margin-bottom: 15px;">Let's collaborate, chat about design, or just say hi. Find me on these platforms:</p>
+      <div class="contact-socials">
+        <!-- Social links with email and social media handles (Replace with your social handles) -->
+        <!--     ↓ Replace '#' with your Social Media Links  -->
+        <a href="#" class="social-link"><i class="fas fa-envelope"></i>yourname@creativ.dev</a> <!-- Your Email -->
+        <a href="#" class="social-link"><i class="fab fa-github"></i> yourname</a> <!-- Your Github Handle -->
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i> fname-lname</a> <!-- Your Linkedin handle -->
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i> @yournamecreates</a> <!-- Your Twitter/X Handle -->
+        <a href="#" class="social-link"><i class="fab fa-dribbble"></i> yourname_design</a> <!-- Your Dribble Handle -->
+      </div>
+      <div class="contact-note">
+        <i class="fas fa-comment-dots"></i> Usually reply within 24h — I'm open to freelance opportunities and creative collabs!
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-email">
+      <i class="fas fa-paper-plane"></i> yourname@creativ.dev <!-- Replace with your actual email -->
+    </div>
+    <div class="copyright">
+      <!-- Replace ↓ Your Name -->
+      © 2025 [Your Name] — built with <i class="fas fa-heart" style="color: #c08497;"></i> for the web community.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
